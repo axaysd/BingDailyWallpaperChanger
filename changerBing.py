@@ -15,6 +15,7 @@ def download_wallpaper():
     nameArr = re.findall(r'(.*?)\(.*?\)', imgname_xml)
     img_name = ''.join(nameArr) + '.jpg'
     sub_url = root[0][3].text
+    sub_url = sub_url[0:-12] + "1920x1080.jpg"
     img_url = "http://bing.com" + sub_url
     r_img = requests.get(img_url)
     path_to_imgdir = r"C:\Daily Bing Wallpapers"
